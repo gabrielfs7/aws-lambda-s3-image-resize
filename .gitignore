@@ -1,0 +1,4 @@
+ .git
+.vs
+aws-lambda-s3-image-resize.sln
+node_modules

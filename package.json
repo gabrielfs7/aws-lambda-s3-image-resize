@@ -1,0 +1,24 @@
+{
+    "name": "aws-lambda-s3-image-resize",
+    "description": "Simple NodeJS script to resize images uploaded to AWS S3",
+    "version": "0.0.1",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gabrielfs7/aws-lambda-s3-image-resize"
+    },
+    "keywords": [],
+    "author": "Gabriel Felipe Soares",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gabrielfs7/aws-lambda-s3-image-resize/issues"
+    },
+    "homepage": "https://github.com/gabrielfs7/aws-lambda-s3-image-resize",
+    "dependencies": {
+        "async": "^2.6.2",
+        "gm": "^1.23.1"
+    }
+}
