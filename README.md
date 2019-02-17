@@ -2,6 +2,8 @@
 
 Simple code for AWS Lambda to process images resize using NodeJS and AWS S3 trigger.
 
+![AWS Lambda + S3](aws-lambda-s3.png "AWS Lambda + S3")
+
 # Requirements
 
 - Have an **AWS account**.
@@ -36,7 +38,7 @@ npm install
 2. Generate a `lambda.tar.gz` file with containing the following files inside:
 
 ```
-zip -r lambda node_modules/async/ node_modules/gm/ index.js
+zip -r lambda node_modules index.js
 ```
 
 3. Updalod the .zip file through your AWS Lambda panel and publish a new version.
