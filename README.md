@@ -33,11 +33,11 @@ Locally you need to generate the package that will be uploaded to aws. So in thi
 npm install
 ```
 
-2. Generate a .zip file with containing the following files inside:
+2. Generate a `lambda.tar.gz` file with containing the following files inside:
 
-- index.js
-- node_modules/
-
+```
+zip -r lambda node_modules/async/ node_modules/gm/ index.js
+```
 
 3. Updalod the .zip file through your AWS Lambda panel and publish a new version.
 
