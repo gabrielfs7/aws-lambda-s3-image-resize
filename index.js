@@ -1,19 +1,26 @@
-﻿// dependencies
+﻿/**
+ * Package dependencies:
+ */
 var async = require('async');
 var AWS = require('aws-sdk');
 var gm = require('gm').subClass({ imageMagick: true }); // Enable ImageMagick integration.
 var util = require('util');
 
-// constants
+/**
+ * Resizing settings:
+ */
 var MAX_WIDTH = 100;
 var MAX_HEIGHT = 100;
 
-// get reference to S3 client 
+/**
+ * S3 SDK client
+ */
 var s3 = new AWS.S3();
 
 exports.handler = function(event, context, callback) {
     // Read options from the event.
     console.log("Reading options from event:\n", util.inspect(event, { depth: 5 }));
+
     var srcBucket = event.Records[0].s3.bucket.name; // Object key may have spaces or unicode non-ASCII characters.
     var srcKey = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " "));
     var dstBucket = srcBucket + "-resized";
@@ -96,8 +103,7 @@ exports.handler = function(event, context, callback) {
                     ' and upload to ' + dstBucket + '/' + dstKey +
                     ' due to an error: ' + err
                 );
-            }
-            else {
+            } else {
                 console.log(
                     'Successfully resized ' + srcBucket + '/' + srcKey +
                     ' and uploaded to ' + dstBucket + '/' + dstKey
