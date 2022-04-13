@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/gabrielfs7/aws-lambda-s3-image-resize",
     "dependencies": {
-        "async": "^2.6.2",
+        "async": "^3.2.2",
         "gm": "^1.23.1"
     }
 }
